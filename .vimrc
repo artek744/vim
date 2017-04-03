@@ -25,6 +25,10 @@ set spelllang=en_us
 nnoremap <C-z> :undo <CR>
 nnoremap <C-y> :redo <CR>
 
+" Indent/Unindent
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " ----- SWITCH TABS -----
 nnoremap <TAB> :tabnext <CR>
