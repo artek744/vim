@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 GREEN="\e[32m"
 NC="\e[39m"
