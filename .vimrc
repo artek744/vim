@@ -7,21 +7,25 @@ execute pathogen#infect()
 colorscheme monokai
 
 
-set number
+" ----- OTHER  SETTINGS  -----
+set number "display line numbers
+set autoindent "copy the indentation from the previous line
+set encoding=utf-8 " The encoding displayed
+set fileencoding=utf-8 "encoding written to file
+set noswapfile "disable .swp files creation
+set nobackup "disable .backup files creation
+set cursorline "highlight the current line
+set clipboard=unnamedplus "use the system clipboard for copy and paste
+set spelllang=en_us "language for spell checking
+set ruler "show the cursor position all the time
+syntax enable "enable syntax highlighting
+
+
+" ----- INTEDNTATION WITH MIXED TABS AND SPACES -----
+" These settings will cause as many hard tabs as possible being used for indentation 
+" and spaces will be used to fill in the remains.
 set tabstop=3 
 set shiftwidth=3 
-set softtabstop=3
-set expandtab
-set autoindent
-set cindent
-set encoding=utf-8
-set noswapfile
-set nobackup 
-set cursorline
-syntax enable
-set laststatus=2
-set clipboard=unnamedplus 
-set spelllang=en_us
 
 
 " ----- UNDO/REDO -----
@@ -87,6 +91,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_section_z = airline#section#create(['%l','/','%L',' : ','%c'])
+set laststatus=2 "the status line appears in every split window
 
 
 " ----- GUI SETTINGS FOR VIM GNOME -----
