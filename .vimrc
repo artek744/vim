@@ -22,23 +22,36 @@ syntax enable
 set laststatus=2
 set clipboard=unnamedplus 
 set spelllang=en_us
+
+
+" ----- UNDO/REDO -----
 nnoremap <C-z> :undo <CR>
 nnoremap <C-y> :redo <CR>
 
-" Indent/Unindent
+
+" ----- QUICK SAVE ------
+nnoremap <c-s> :update<CR>
+inoremap <c-s> <c-o>:update<CR>
+vnoremap <c-s> <Esc>:update <CR>gv
+
+
+" ----- INDENT/UNINDED -----
 inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+
 " ----- SWITCH TABS -----
 nnoremap <TAB> :tabnext <CR>
 nnoremap <S-TAB> :tabprevious <CR>
+
 
 " ----- NAVIGATION BETWEEN PANES -----
 nnoremap <C-Left> <C-W><C-H>
 nnoremap <C-Right> <C-W><C-L>
 nnoremap <C-Down> <C-W><C-J>
 nnoremap <C-Up> <C-W><C-K>
+
 
 " ----- RESIZE SPLITS QUICKLY -----
 nnoremap <S-Left> :vertical resize -5 <CR>
@@ -51,7 +64,6 @@ nnoremap <S-Down> :resize +5 <CR>
 " Shortcut to open nerdtree
 map <C-N> :NERDTreeToggle<CR> 
 map <A-M> :NERDTreeToggle<CR>  
-
 
 "Automatically start up nerdtree with vim
 "autocmd vimenter * NERDTree  
@@ -94,6 +106,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
+
 
 " ----- TCOMMENT -----
 nnoremap <C-?> :TComment <CR>
