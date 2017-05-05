@@ -79,8 +79,8 @@ map <A-M> :NERDTreeToggle<CR>
 noremap <S-F> :%s/T/R/g
 
 " ------ VISIBLITY WHITESPACES ------ 
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-noremap <F10> :set list!<CR>
+set listchars=eol:¶,tab:>·,trail:~,extends:>,precedes:<,space:␣
+nnoremap <F10> :set list!<CR>
 
 " ----- AIRLINE -----
 let g:airline#extensions#tabline#enabled = 1
