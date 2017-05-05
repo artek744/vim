@@ -75,6 +75,8 @@ map <A-M> :NERDTreeToggle<CR>
 "Close vim when the only widow
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  
 
+" ----- FIND & REPLACE -----
+noremap <S-F> :%s/T/R/g
 
 " ------ VISIBLITY WHITESPACES ------ 
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
