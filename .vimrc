@@ -23,19 +23,9 @@ syntax enable "enable syntax highlighting
 
 " ----- INTEDNTATION WITH MIXED TABS AND SPACES -----
 " These settings will cause as many hard tabs as possible being used for indentation 
-" and spaces will be used to fill in the remains
+" and spaces will be used to fill in the remains.
 set tabstop=3 
 set shiftwidth=3 
-
-
-" ----- MOVE CURSOR -----
-" enable to move the cursor down/up one diplsayed line
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
 
 
 " ----- UNDO/REDO -----
@@ -85,6 +75,10 @@ map <A-M> :NERDTreeToggle<CR>
 "Close vim when the only widow
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  
 
+
+" ------ VISIBLITY WHITESPACES ------ 
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+noremap <F10> :set list!<CR>
 
 " ----- AIRLINE -----
 let g:airline#extensions#tabline#enabled = 1
