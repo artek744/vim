@@ -3,11 +3,45 @@
 execute pathogen#infect()
 
 
+" ----- INDNET -----
+let g:indentViaSpaces = 0
+let g:indentViaTabs = 1
+let g:indentType = g:indentViaSpaces
+
+function SetIndentViaSpaces()
+   " These settings will result in spaces being used for all indentation.
+   set expandtab
+   set shiftwidth=3
+   set softtabstop=3
+endfunction
+
+function SetIndentViaTabsAndSpaces()
+   " These settings will cause as many hard tabs as possible being used for indentation 
+   " and spaces will be used to fill in the remains.
+   set tabstop=3
+   set shiftwidth=3
+endfunction
+
+function IndentTypeToogle()
+   if g:indentType == g:indentViaSpaces
+      :call SetIndentViaSpaces()
+      :echom "indent via spaces"
+      let g:indentType = g:indentViaTabs   
+   else
+      :call SetIndentViaTabsAndSpaces()
+      :echom "indent via tabs and spaces"
+      let g:indentType = g:indentViaSpaces
+   endif
+endfunction
+
+noremap <F9> :call IndentTypeToogle()<CR>
+
+
 " ----- COLOR SCHEME -----  
 colorscheme monokai
 
 
-" ----- OTHER  SETTINGS  -----
+" ----- MISCELLANEOUS  SETTINGS  -----
 set number "display line numbers
 set autoindent "copy the indentation from the previous line
 set encoding=utf-8 " The encoding displayed
@@ -19,13 +53,17 @@ set clipboard=unnamedplus "use the system clipboard for copy and paste
 set spelllang=en_us "language for spell checking
 set ruler "show the cursor position all the time
 syntax enable "enable syntax highlighting
+call SetIndentViaSpaces()
 
 
-" ----- INTEDNTATION WITH MIXED TABS AND SPACES -----
-" These settings will cause as many hard tabs as possible being used for indentation 
-" and spaces will be used to fill in the remains.
-set tabstop=3 
-set shiftwidth=3 
+" ----- MOVE CURSOR -----
+" enable to move the cursor down/up one diplsayed line
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
 
 
 " ----- UNDO/REDO -----
