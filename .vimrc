@@ -38,6 +38,8 @@ set shiftwidth=3
 " inoremap <Down> <C-o>gj
 " inoremap <Up> <C-o>gk
 
+" Select all
+nnoremap <C-a> <esc>ggVG<CR>
 
 " ----- UNDO/REDO -----
 nnoremap <C-z> :undo <CR>
