@@ -1,8 +1,6 @@
-" ----- PATHOGEN -----
+"----- PATHOGEN -----
 "Pathogen is used to easy managed plugins
 execute pathogen#infect()
-
-
 
 " ----- COLOR SCHEME -----  
 colorscheme monokai
@@ -18,15 +16,26 @@ set nobackup "disable .backup files creation
 set cursorline "highlight the current line
 set clipboard=unnamedplus "use the system clipboard for copy and paste
 set spelllang=en_us "language for spell checking
-set ruler "show the cursor position all the time
 syntax enable "enable syntax highlighting
 
 
 " ----- INDENT -----
-" These settings will cause as many hard tabs as possible being used for indentation 
-" and spaces will be used to fill in the remains.
 set tabstop=3
 set shiftwidth=3
+
+function TabToggle()
+	if &expandtab
+		set noexpandtab
+		echo "set tabs as indent"
+	else
+		set expandtab
+		echo "set spaces as indent"
+	endif
+endfunction
+nmap <F9> mz:execute TabToggle()<CR>
+
+noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
+imap <silent> <Home> <C-O><Home>
 
 
 " ----- MOVE CURSOR -----
@@ -42,8 +51,8 @@ set shiftwidth=3
 nnoremap <C-a> <esc>ggVG<CR>
 
 " ----- UNDO/REDO -----
-nnoremap <C-z> :undo <CR>
 nnoremap <C-y> :redo <CR>
+nnoremap <C-z> :undo <CR>
 
 
 " ----- QUICK SAVE ------
@@ -121,7 +130,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10 "set font
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12 "set font
 
 
 " ----- SYNTASTIC -----
@@ -136,6 +145,7 @@ let g:syntastic_aggregate_errors = 1
 
 
 " ----- TCOMMENT -----
-nnoremap <C-?> :TComment <CR>
-vnoremap <C-?> :TComment <CR>
+" nnoremap <C-?> :TComment <CR>
+" vnoremap <C-?> :TComment <CR>
+" inoremap <C-?> :TComment <CR>
 
