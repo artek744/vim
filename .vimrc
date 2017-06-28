@@ -60,12 +60,16 @@ imap <silent> <Home> <C-O><Home>
 " inoremap <Down> <C-o>gj
 " inoremap <Up> <C-o>gk
 
+
 " ----- SELECT ALL -----
 nnoremap <C-a> <esc>ggVG<CR>
+
 
 " ----- UNDO/REDO -----
 nnoremap <C-y> :redo <CR>
 nnoremap <C-z> :undo <CR>
+inoremap <C-y> <c-o>:redo <CR>
+inoremap <C-z> <c-o>:undo <CR>
 
 
 " ----- QUICK SAVE ------
@@ -116,8 +120,17 @@ noremap <S-F> :%s/T/R/g
 
 
 " ------ VISIBLITY WHITESPACES ------
-set listchars=eol:¶,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+hi NonText ctermfg=128 guifg=#af00d7
 nnoremap <F10> :set list!<CR>
+
+
+" ----- GUI SETTINGS FOR VIM GNOME -----
+set guioptions-=m		"remove menu bar
+set guioptions-=T		"remove toolbar
+set guioptions-=r		"remove right-hand scroll bar
+set guioptions-=L		"remove left-hand scroll bar
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12 "set font
 
 
 " ----- AIRLINE -----
@@ -128,22 +141,24 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
+if &guifont =~? 'Powerline'
+	let g:airline_left_sep = ''
+	let g:airline_left_alt_sep = ''
+	let g:airline_right_sep = ''
+	let g:airline_right_alt_sep = ''
+	let g:airline_symbols.branch = ''
+	let g:airline_symbols.readonly = ''
+else
+	let g:airline_left_sep = ''
+	let g:airline_left_alt_sep = ''
+	let g:airline_right_sep = ''
+	let g:airline_right_alt_sep = ''
+	let g:airline_symbols.branch = ''
+	let g:airline_symbols.readonly = ''
+endif
+
 let g:airline_section_z = airline#section#create(['%l','/','%L',' : ','%c'])
 set laststatus=2 "the status line appears in every split window
-
-
-" ----- GUI SETTINGS FOR VIM GNOME -----
-set guioptions-=m		"remove menu bar
-set guioptions-=T		"remove toolbar
-set guioptions-=r		"remove right-hand scroll bar
-set guioptions-=L		"remove left-hand scroll bar
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12 "set font
 
 
 " ----- SYNTASTIC -----
@@ -156,3 +171,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 
+
+if has("gui_running")
+	nnoremap <C-?> :TComment <CR>
+	vnoremap <C-?> :TComment <CR>
+	inoremap <C-?> :TComment <CR>
+endif
