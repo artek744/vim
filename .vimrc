@@ -120,8 +120,10 @@ noremap <S-F> :%s/T/R/g
 
 
 " ------ VISIBLITY WHITESPACES ------
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-hi NonText ctermfg=128 guifg=#af00d7
+
+set listchars=eol:$,tab:>·,trail:~,extends:>,precedes:<,space:␣
+hi NonText ctermfg=121 guifg=#87ff87
+hi SpecialKey ctermfg=121 guifg=#87ff87
 nnoremap <F10> :set list!<CR>
 
 
