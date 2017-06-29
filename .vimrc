@@ -174,8 +174,13 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 
 
+" ----- TCOMMENT -----
 if has("gui_running")
 	nnoremap <C-?> :TComment <CR>
 	vnoremap <C-?> :TComment <CR>
 	inoremap <C-?> :TComment <CR>
 endif
+
+
+" ----- TAGBAR -----
+nmap <F8> :TagbarToggle<CR>
