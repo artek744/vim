@@ -19,7 +19,7 @@ set spelllang=en_us				" language for spell checking
 syntax enable						" enable syntax highlighting
 filetype on							" enable file type detection
 filetype plugin on				" enable loading the plugin files for specific file types
-
+set backspace=2					" make backspace work like most other apps
 
 " ----- DELETE WITHOUT PUTTING TEXT IN THE REGISTER (COPY) -----
 nnoremap <Del> "_x
