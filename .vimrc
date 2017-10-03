@@ -20,6 +20,7 @@ syntax enable						" enable syntax highlighting
 filetype on							" enable file type detection
 filetype plugin on				" enable loading the plugin files for specific file types
 set backspace=2					" make backspace work like most other apps
+set linebreak						" move word to another line when it must be divided
 
 " ----- DELETE WITHOUT PUTTING TEXT IN THE REGISTER (COPY) -----
 nnoremap <Del> "_x
