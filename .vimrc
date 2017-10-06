@@ -5,6 +5,33 @@ execute pathogen#infect()
 " ----- COLOR SCHEME -----
 colorscheme monokai
 
+function! Demo()
+   " call inputsave()
+   " let find = input('Find: ')
+   " let replace = input('Replace: ')
+   " call inputrestore()
+
+   " let find =
+   " let replace =
+
+   return "test text"
+
+   " call inputsave()
+   " let decision = input('Replace all?: y/n [n] ')
+   " if (decision == 'y')
+   "    ':%s/find/replace/g'
+   " endif
+   " call inputrestore()
+
+
+  " call setline('.', curline . ' ' . name)
+endfunction
+
+function! GetSubstituteCommand(range, term)
+  " return a:range . "s" . input(":%s", "/" . a:term . "/" . "xxx/g")
+  " return input(":"."%s/" . a:term . "/" . "xxx/g")
+  return ':echo "test"'
+endfunction
 
 " ----- MISCELLANEOUS SETTINGS -----
 set number							" display line numbers
@@ -36,8 +63,9 @@ endif
 " ----- INDENT -----
 set tabstop=3
 set shiftwidth=3
+set expandtab
 
-function TabToggle()
+function! TabToggle()
 	if &expandtab
 		set noexpandtab
 		echo "set tabs as indent"
