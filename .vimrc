@@ -5,33 +5,6 @@ execute pathogen#infect()
 " ----- COLOR SCHEME -----
 colorscheme monokai
 
-function! Demo()
-   " call inputsave()
-   " let find = input('Find: ')
-   " let replace = input('Replace: ')
-   " call inputrestore()
-
-   " let find =
-   " let replace =
-
-   return "test text"
-
-   " call inputsave()
-   " let decision = input('Replace all?: y/n [n] ')
-   " if (decision == 'y')
-   "    ':%s/find/replace/g'
-   " endif
-   " call inputrestore()
-
-
-  " call setline('.', curline . ' ' . name)
-endfunction
-
-function! GetSubstituteCommand(range, term)
-  " return a:range . "s" . input(":%s", "/" . a:term . "/" . "xxx/g")
-  " return input(":"."%s/" . a:term . "/" . "xxx/g")
-  return ':echo "test"'
-endfunction
 
 " ----- MISCELLANEOUS SETTINGS -----
 set number							" display line numbers
@@ -48,6 +21,7 @@ filetype on							" enable file type detection
 filetype plugin on				" enable loading the plugin files for specific file types
 set backspace=2					" make backspace work like most other apps
 set linebreak						" move word to another line when it must be divided
+
 
 " ----- DELETE WITHOUT PUTTING TEXT IN THE REGISTER (COPY) -----
 nnoremap <Del> "_x
@@ -135,17 +109,20 @@ nnoremap <S-Down> :resize +5 <CR>
 " ------ NERDTREE ------
 " Shortcut to open nerdtree
 map <C-N> :NERDTreeToggle<CR>
-map <A-M> :NERDTreeToggle<CR>
-
-"Automatically start up nerdtree with vim
-"autocmd vimenter * NERDTree
-
-"Close vim when the only widow
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 " ----- FIND & REPLACE -----
-noremap <S-F> :%s/T/R/g
+function! SearchAndReplace()
+   call inputsave()
+   let src = input("source: ")
+   echo " "
+   let rep = input("replacement: ")
+   call inputrestore()
+
+   execute ":%s/".src."/".rep."/g"
+endfunction
+
+noremap <S-F> :call SearchAndReplace()<CR>
 
 
 " ------ VISIBLITY WHITESPACES ------
