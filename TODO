@@ -1,6 +1,6 @@
 * switch 'source <--> header' file
 * jump to definition function/class etc. even if is in other file
-* investigate if is possible using zenity in vim e.g. for search and replace
-	+ investigate inputdialog() - it is vim function
 * change map for word completion from ctrl+n to ctrl+space
 * add ultisnips
+	+ bash color
+* ctag
