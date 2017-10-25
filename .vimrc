@@ -1,4 +1,4 @@
-"----- PATHOGEN -----
+" ----- PATHOGEN -----
 "Pathogen is used to easy managed plugins
 execute pathogen#infect()
 
@@ -7,20 +7,20 @@ colorscheme monokai
 
 
 " ----- MISCELLANEOUS SETTINGS -----
-set number							" display line numbers
-set autoindent						" copy the indentation from the previous line
-set encoding=utf-8				" The encoding displayed
-set fileencoding=utf-8			" encoding written to file
-set noswapfile						" disable .swp files creation
-set nobackup						" disable .backup files creation
-set cursorline						" highlight the current line
-set clipboard=unnamedplus		" use the system clipboard for copy and paste
-set spelllang=en_us				" language for spell checking
-syntax enable						" enable syntax highlighting
-filetype on							" enable file type detection
-filetype plugin on				" enable loading the plugin files for specific file types
-set backspace=2					" make backspace work like most other apps
-set linebreak						" move word to another line when it must be divided
+set number                    " display line numbers
+set autoindent                " copy the indentation from the previous line
+set encoding=utf-8            " The encoding displayed
+set fileencoding=utf-8        " encoding written to file
+set noswapfile                " disable .swp files creation
+set nobackup                  " disable .backup files creation
+set cursorline                " highlight the current line
+set clipboard=unnamedplus     " use the system clipboard for copy and paste
+set spelllang=en_us           " language for spell checking
+syntax enable                 " enable syntax highlighting
+filetype on                   " enable file type detection
+filetype plugin on            " enable loading the plugin files for specific file types
+set backspace=2               " make backspace work like most other apps
+set linebreak                 " move word to another line when it must be divided
 
 
 " ----- DELETE WITHOUT PUTTING TEXT IN THE REGISTER (COPY) -----
@@ -29,12 +29,13 @@ vnoremap <Del> "_d
 
 
 " ----- COPY-COMMENT-PASTE -----
-noremap <C-d> Y:TComment<CR>p
+nnoremap <C-d> Y:TComment<CR>p
+vnoremap <C-d> y`]pgv:TComment<CR>`]
 
 
 " ----- ENABLE MOUSE SUPPORT -----
 if has('mouse')
-	set mouse=a
+   set mouse=a
 endif
 
 
@@ -44,13 +45,13 @@ set shiftwidth=3
 set expandtab
 
 function! TabToggle()
-	if &expandtab
-		set noexpandtab
-		echo "set tabs as indent"
-	else
-		set expandtab
-		echo "set spaces as indent"
-	endif
+   if &expandtab
+      set noexpandtab
+      echo "set tabs as indent"
+   else
+      set expandtab
+      echo "set spaces as indent"
+   endif
 endfunction
 nmap <F9> mz:execute TabToggle()<CR>
 
@@ -154,19 +155,19 @@ if !exists('g:airline_symbols')
 endif
 
 if &guifont =~? 'Powerline'
-	let g:airline_left_sep = ''
-	let g:airline_left_alt_sep = ''
-	let g:airline_right_sep = ''
-	let g:airline_right_alt_sep = ''
-	let g:airline_symbols.branch = ''
-	let g:airline_symbols.readonly = ''
+   let g:airline_left_sep = ''
+   let g:airline_left_alt_sep = ''
+   let g:airline_right_sep = ''
+   let g:airline_right_alt_sep = ''
+   let g:airline_symbols.branch = ''
+   let g:airline_symbols.readonly = ''
 else
-	let g:airline_left_sep = ''
-	let g:airline_left_alt_sep = ''
-	let g:airline_right_sep = ''
-	let g:airline_right_alt_sep = ''
-	let g:airline_symbols.branch = ''
-	let g:airline_symbols.readonly = ''
+   let g:airline_left_sep = ''
+   let g:airline_left_alt_sep = ''
+   let g:airline_right_sep = ''
+   let g:airline_right_alt_sep = ''
+   let g:airline_symbols.branch = ''
+   let g:airline_symbols.readonly = ''
 endif
 
 let g:airline_section_z = airline#section#create(['%l','/','%L',' : ','%c'])
@@ -186,9 +187,9 @@ let g:syntastic_aggregate_errors = 1
 
 " ----- TCOMMENT -----
 if has("gui_running")
-	nnoremap <C-?> :TComment <CR>
-	vnoremap <C-?> :TComment <CR>
-	inoremap <C-?> :TComment <CR>
+   nnoremap <C-?> :TComment <CR>
+   vnoremap <C-?> :TComment <CR>
+   inoremap <C-?> :TComment <CR>
 endif
 
 
