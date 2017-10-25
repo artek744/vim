@@ -28,6 +28,10 @@ nnoremap <Del> "_x
 vnoremap <Del> "_d
 
 
+" ----- COPY-COMMENT-PASTE -----
+noremap <C-d> Y:TComment<CR>p
+
+
 " ----- ENABLE MOUSE SUPPORT -----
 if has('mouse')
 	set mouse=a
@@ -119,7 +123,7 @@ function! SearchAndReplace()
    let rep = input("replacement: ")
    call inputrestore()
 
-   execute ":%s/".src."/".rep."/g"
+   execute ":%s/".src."/".rep."/gc"
 endfunction
 
 noremap <S-F> :call SearchAndReplace()<CR>
