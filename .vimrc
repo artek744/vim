@@ -1,5 +1,6 @@
 " ----- PATHOGEN -----
 "Pathogen is used to easy managed plugins
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " ----- COLOR SCHEME -----
