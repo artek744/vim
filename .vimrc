@@ -3,6 +3,7 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+
 " ----- COLOR SCHEME -----
 colorscheme monokai
 
@@ -22,6 +23,21 @@ filetype on                   " enable file type detection
 filetype plugin on            " enable loading the plugin files for specific file types
 set backspace=2               " make backspace work like most other apps
 set linebreak                 " move word to another line when it must be divided
+set hlsearch                  " set higlight for search matches
+
+
+" ----- COLOR FOR SEARCH MATCHES  -----
+hi Search cterm=NONE ctermfg=black ctermbg=green
+hi Search gui=NONE guifg=black guibg=green
+
+
+" ----- MOVES LINES -----
+nnoremap <A-DOWN> :m .+1<CR>==
+nnoremap <A-UP> :m .-2<CR>==
+inoremap <A-DOWN> <Esc>:m .+1<CR>==gi
+inoremap <A-UP> <Esc>:m .-2<CR>==gi
+vnoremap <A-DOWN> :m '>+1<CR>gv=gv
+vnoremap <A-UP> :m '<-2<CR>gv=gv
 
 
 " ----- DELETE WITHOUT PUTTING TEXT IN THE REGISTER (COPY) -----
