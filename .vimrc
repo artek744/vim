@@ -21,15 +21,16 @@ set spelllang=en_us           " language for spell checking
 syntax enable                 " enable syntax highlighting
 filetype on                   " enable file type detection
 filetype plugin on            " enable loading the plugin files for specific file types
+filetype plugin indent off    " disable file type indent
 set backspace=2               " make backspace work like most other apps
 set linebreak                 " move word to another line when it must be divided
-set hlsearch                  " set higlight for search matches
 
 
 " ----- COLOR FOR SEARCH MATCHES  -----
+set hlsearch " set higlight for search matches
+nnoremap <silent> <CR> :nohlsearch<CR><CR>
 hi Search cterm=NONE ctermfg=black ctermbg=green
 hi Search gui=NONE guifg=black guibg=green
-
 
 " ----- MOVES LINES -----
 nnoremap <A-DOWN> :m .+1<CR>==
@@ -59,7 +60,6 @@ endif
 " ----- INDENT -----
 set tabstop=3
 set shiftwidth=3
-set expandtab
 
 function! TabToggle()
    if &expandtab
@@ -110,8 +110,8 @@ vnoremap <S-Tab> <gv
 
 
 " ----- SWITCH TABS -----
-nnoremap <TAB> :tabnext <CR>
-nnoremap <S-TAB> :tabprevious <CR>
+nnoremap <TAB> :bnext <CR>
+nnoremap <S-TAB> :bprevious <CR>
 
 
 " ----- NAVIGATION BETWEEN PANES -----
