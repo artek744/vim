@@ -53,7 +53,7 @@ vnoremap <C-d> y`]pgv:TComment<CR>`]
 
 " ----- ENABLE MOUSE SUPPORT -----
 if has('mouse')
-   set mouse=a
+	set mouse=a
 endif
 
 
@@ -62,13 +62,13 @@ set tabstop=3
 set shiftwidth=3
 
 function! TabToggle()
-   if &expandtab
-      set noexpandtab
-      echo "set tabs as indent"
-   else
-      set expandtab
-      echo "set spaces as indent"
-   endif
+	if &expandtab
+		set noexpandtab
+		echo "set tabs as indent"
+	else
+		set expandtab
+		echo "set spaces as indent"
+	endif
 endfunction
 nmap <F9> mz:execute TabToggle()<CR>
 
@@ -135,13 +135,13 @@ map <C-N> :NERDTreeToggle<CR>
 
 " ----- FIND & REPLACE -----
 function! SearchAndReplace()
-   call inputsave()
-   let src = input("source: ")
-   echo " "
-   let rep = input("replacement: ")
-   call inputrestore()
+	call inputsave()
+	let src = input("source: ")
+	echo " "
+	let rep = input("replacement: ")
+	call inputrestore()
 
-   execute ":%s/".src."/".rep."/gc"
+	execute ":%s/".src."/".rep."/gc"
 endfunction
 
 noremap <S-F> :call SearchAndReplace()<CR>
@@ -168,16 +168,16 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+	let g:airline_symbols = {}
 endif
 
 if &guifont =~? 'Powerline'
-   let g:airline_left_sep = ''
-   let g:airline_left_alt_sep = ''
-   let g:airline_right_sep = ''
-   let g:airline_right_alt_sep = ''
-   let g:airline_symbols.branch = ''
-   let g:airline_symbols.readonly = ''
+	let g:airline_left_sep = ''
+	let g:airline_left_alt_sep = ''
+	let g:airline_right_sep = ''
+	let g:airline_right_alt_sep = ''
+	let g:airline_symbols.branch = ''
+	let g:airline_symbols.readonly = ''
 else
    let g:airline_left_sep = ''
    let g:airline_left_alt_sep = ''
@@ -204,9 +204,9 @@ let g:syntastic_aggregate_errors = 1
 
 " ----- TCOMMENT -----
 if has("gui_running")
-   nnoremap <C-?> :TComment <CR>
-   vnoremap <C-?> :TComment <CR>
-   inoremap <C-?> :TComment <CR>
+	nnoremap <C-?> :TComment <CR>
+	vnoremap <C-?> :TComment <CR>
+	inoremap <C-?> :TComment <CR>
 endif
 
 
