@@ -32,6 +32,7 @@ nnoremap <silent> <CR> :nohlsearch<CR><CR>
 hi Search cterm=NONE ctermfg=black ctermbg=green
 hi Search gui=NONE guifg=black guibg=green
 
+
 " ----- MOVES LINES -----
 nnoremap <A-DOWN> :m .+1<CR>==
 nnoremap <A-UP> :m .-2<CR>==
@@ -47,8 +48,9 @@ vnoremap <Del> "_d
 
 
 " ----- COPY-COMMENT-PASTE -----
-nnoremap <C-d> Y:TComment<CR>p
-vnoremap <C-d> y`]pgv:TComment<CR>`]
+" nnoremap <C-d> Y:TComment<CR>p
+vnoremap <C-d> :t'><CR>gv:TComment<CR>`]
+nnoremap <C-d> :t.<CR>k:TComment<CR>`]
 
 
 " ----- ENABLE MOUSE SUPPORT -----
@@ -148,7 +150,6 @@ noremap <S-F> :call SearchAndReplace()<CR>
 
 
 " ------ VISIBLITY WHITESPACES ------
-
 set listchars=eol:$,tab:>·,trail:~,extends:>,precedes:<,space:␣
 hi NonText ctermfg=121 guifg=#87ff87
 hi SpecialKey ctermfg=121 guifg=#87ff87
@@ -160,7 +161,7 @@ set guioptions-=m		"remove menu bar
 set guioptions-=T		"remove toolbar
 set guioptions-=r		"remove right-hand scroll bar
 set guioptions-=L		"remove left-hand scroll bar
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12 "set font
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 14 "set font
 
 
 " ----- AIRLINE -----
