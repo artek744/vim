@@ -213,3 +213,7 @@ endif
 
 " ----- TAGBAR -----
 nmap <F8> :TagbarToggle<CR>
+
+
+" ----- EASY TAGS -----
+autocmd BufRead,FileReadPost * UpdateTags "Update tags after open buffer or file
