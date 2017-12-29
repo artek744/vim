@@ -216,4 +216,16 @@ nmap <F8> :TagbarToggle<CR>
 
 
 " ----- EASY TAGS -----
+" set autochdir
+" set tags=./tags,tags;
+let g:easytags_dynamic_files = 2
 autocmd BufRead,FileReadPost * UpdateTags "Update tags after open buffer or file
+
+" to generate tags file
+" ctags --extra=+f -R .
+" e %:r.cpp
+
+" Change to source file (only for programming c)
+" TODO: expand it for other programming languages
+map <F4> :exec("tag ".expand("%:t:r").".c")<CR>
+
