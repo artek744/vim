@@ -21,7 +21,6 @@ set spelllang=en_us           " language for spell checking
 syntax enable                 " enable syntax highlighting
 filetype on                   " enable file type detection
 filetype plugin on            " enable loading the plugin files for specific file types
-filetype plugin indent off    " disable file type indent
 set backspace=2               " make backspace work like most other apps
 set linebreak                 " move word to another line when it must be divided
 
@@ -215,17 +214,5 @@ endif
 nmap <F8> :TagbarToggle<CR>
 
 
-" ----- EASY TAGS -----
-" set autochdir
-" set tags=./tags,tags;
-let g:easytags_dynamic_files = 2
-autocmd BufRead,FileReadPost * UpdateTags "Update tags after open buffer or file
 
-" to generate tags file
-" ctags --extra=+f -R .
-" e %:r.cpp
-
-" Change to source file (only for programming c)
-" TODO: expand it for other programming languages
-map <F4> :exec("tag ".expand("%:t:r").".c")<CR>
-
+autocmd BufRead,FileReadPost *.c,*h,*.cpp UpdateTags "Update tags after open buffer or file

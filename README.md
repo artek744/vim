@@ -22,3 +22,8 @@ widget "vim-main-window.*GtkForm" style "vimfix"
 ```
 autocmd VimLeave * call system('echo ' . shellescape(getreg('+')) . ' | xclip -selection clipboard')
 ```
+
+- **Generate ctags file **:
+```
+ctags --extra=+f -R .
+```
