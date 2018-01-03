@@ -6,11 +6,18 @@ if exists('*SwitchSourceHeaderFile')
 endif
 
 function! SwitchSourceHeaderFile()
+	let filename = ""
 	if(expand('%:e') == "c")
-		silent! exec("tag ".expand("%:t:r").".h")
+		let filename = expand("%:t:r").".h"
 	else
-		silent! exec("tag ".expand("%:t:r").".c")
+		let filename = expand("%:t:r").".c"
 	endif
+
+	try
+		exec("tag ".filename)
+	catch
+		echo "Probably the tags file has not been generated or ".filename." file doesn't exist"
+	endtry
 endfunction
 
 " Let Vim walk up directory hierarchy from CWD to root looking for tags file
