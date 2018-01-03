@@ -4,3 +4,4 @@
 * add ultisnips
 	+ bash color
 * ctag
+* Scroll using arrow keys, this function basically is mapped to C-E and C-Y, but C-Y in current map is responsible for 'REDO'

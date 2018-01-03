@@ -1,4 +1,3 @@
-" ----- PATHOGEN -----
 "Pathogen is used to easy managed plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -214,5 +213,5 @@ endif
 nmap <F8> :TagbarToggle<CR>
 
 
-
-autocmd BufRead,FileReadPost *.c,*h,*.cpp UpdateTags "Update tags after open buffer or file
+" ----- UPDATE TAGS  -----
+autocmd BufRead,FileReadPost *.c,*h,*.cpp,*.py UpdateTags "Update tags after open buffer or filei

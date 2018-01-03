@@ -12,3 +12,8 @@ function! SwitchSourceHeaderFile()
 		silent! exec("tag ".expand("%:t:r").".cpp")
 	endif
 endfunction
+
+" Let Vim walk up directory hierarchy from CWD to root looking for tags file
+set tags=tags;/
+" Tell EasyTags to use the tags file found by Vim
+let g:easytags_dynamic_files = 1
