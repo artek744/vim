@@ -2,7 +2,7 @@
 map <F4> :call SwitchSourceHeaderFile()<CR>
 
 if exists('*SwitchSourceHeaderFile')
-    finish
+	finish
 endif
 
 function! SwitchSourceHeaderFile()
