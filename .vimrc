@@ -46,7 +46,6 @@ vnoremap <Del> "_d
 
 
 " ----- COPY-COMMENT-PASTE -----
-" nnoremap <C-d> Y:TComment<CR>p
 vnoremap <C-d> :t'><CR>gv:TComment<CR>`]
 nnoremap <C-d> :t.<CR>k:TComment<CR>`]
 
@@ -214,4 +213,4 @@ nmap <F8> :TagbarToggle<CR>
 
 
 " ----- UPDATE TAGS  -----
-autocmd BufRead,FileReadPost *.c,*h,*.cpp,*.py UpdateTags "Update tags after open buffer or filei
+autocmd BufRead,FileReadPost *.c,*h,*.cpp,*.py UpdateTags "Update tags after open buffer or file
