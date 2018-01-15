@@ -21,6 +21,7 @@ syntax enable                 " enable syntax highlighting
 filetype on                   " enable file type detection
 filetype plugin on            " enable loading the plugin files for specific file types
 set backspace=2               " make backspace work like most other apps
+set linespace=2               " wihtout this line the underscores are invisible
 set linebreak                 " move word to another line when it must be divided
 
 
@@ -130,6 +131,8 @@ nnoremap <S-Down> :resize +5 <CR>
 " ------ NERDTREE ------
 " Shortcut to open nerdtree
 map <C-N> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.o$', '\.so$', '\.a$']
 
 
 " ----- FIND & REPLACE -----
