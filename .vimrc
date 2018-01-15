@@ -132,7 +132,7 @@ nnoremap <S-Down> :resize +5 <CR>
 " Shortcut to open nerdtree
 map <C-N> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
-let NERDTreeIgnore = ['\.o$', '\.so$', '\.a$']
+let NERDTreeIgnore += ['\.o$', '\.so$', '\.a$']
 
 
 " ----- FIND & REPLACE -----
