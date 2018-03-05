@@ -217,3 +217,11 @@ nmap <F8> :TagbarToggle<CR>
 
 " ----- UPDATE TAGS  -----
 autocmd BufRead,FileReadPost *.c,*h,*.cpp,*.py UpdateTags "Update tags after open buffer or file
+
+
+" ----- FOLDING -----
+set foldmethod=syntax
+set foldlevel=99
+
+hi Folded cterm=NONE ctermfg=black ctermbg=8
+hi Folded gui=NONE guifg=black guibg=green
