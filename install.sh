@@ -6,23 +6,30 @@ GREEN="\033[0;32m"
 GREEN_BOLD="\033[1;32m"
 YELLOW="\033[0;33m"
 YELLOW_BOLD="\033[1;33m"
+RED="\033[0;31m"
+RED_BOLD="\033[1;31m"
 RESET="\033[0m"
 
-function copy_configs
+SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+copy_configs()
 {
 	echo -e $CYAN "\nCopying configs ..." $RESET
 
-	cp -rf .vim ~/
-	cp -rf .vimrc ~/
+	rm -r ~/.vim 2> /dev/null
+	rm ~/.vimrc 2> /dev/null
+
+	ln -sfn $SCRIPT_PATH/.vim ~/.vim
+	ln -sfn $SCRIPT_PATH/.vimrc ~/.vimrc
 }
 
-function install_submodules
+install_submodules()
 {
 	echo -e $CYAN "\nInstalling submodules ..." $RESET
 	git submodule update --init --recursive
 }
 
-function install_dependencies
+install_dependencies()
 {
 	dependencies="vim vim-gtk vim-gnome exuberant-ctags"
 	echo -e "\nDependencies: "$YELLOW_BOLD $dependencies $RESET
@@ -42,11 +49,14 @@ function install_dependencies
 	done
 }
 
+main()
+{
+	copy_configs
+	install_dependencies
+	install_submodules
 
-copy_configs
-install_dependencies
-install_submodules
-
-echo -e $GREEN_BOLD "\nVim config files have been instaled.\n" $RESET
+	echo -e $GREEN_BOLD "\nVim config files have been instaled.\n" $RESET
+}
 
 
+main
