@@ -215,10 +215,6 @@ endif
 nmap <F8> :TagbarToggle<CR>
 
 
-" ----- UPDATE TAGS  -----
-autocmd BufRead,FileReadPost *.c,*h,*.cpp,*.py UpdateTags "Update tags after open buffer or file
-
-
 " ----- FOLDING -----
 set foldmethod=syntax
 set foldlevel=99
