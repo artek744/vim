@@ -192,17 +192,6 @@ let g:airline_section_z = airline#section#create(['%l','/','%L',' : ','%c'])
 set laststatus=2 "the status line appears in every split window
 
 
-" ----- SYNTASTIC -----
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-
-
 " ----- TCOMMENT -----
 if has("gui_running")
 	nnoremap <C-?> :TComment <CR>
