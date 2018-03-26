@@ -1,4 +1,4 @@
-"Pathogen is used to easy managed plugins
+" Pathogen is used to easy managed plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
@@ -192,13 +192,11 @@ let g:airline_section_z = airline#section#create(['%l','/','%L',' : ','%c'])
 set laststatus=2 "the status line appears in every split window
 
 
-" ----- TCOMMENT -----
-if has("gui_running")
-	nnoremap <C-?> :TComment <CR>
-	vnoremap <C-?> :TComment <CR>
-	inoremap <C-?> :TComment <CR>
-endif
-
+" ----- NERD COMMENTR -----
+let g:NERDSpaceDelims = 1
+let g:NERDCustomDelimiters = {'c': { 'left': '//' }, 'cpp': { 'left': '//' }}
+nmap <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle gv
 
 " ----- TAGBAR -----
 nmap <F8> :TagbarToggle<CR>
