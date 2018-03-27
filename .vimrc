@@ -211,5 +211,7 @@ hi Folded gui=NONE guifg=black guibg=green
 
 
 " ----- ULTISNIPS -----
-let g:UltiSnipsExpandTrigger="<c-j>"
-
+let g:UltiSnipsExpandTrigger="<c-l>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsJumpForwardTrigger="<c-l>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsJumpBackwardTrigger="<c-h>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
