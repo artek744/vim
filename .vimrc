@@ -208,3 +208,8 @@ set foldlevel=99
 
 hi Folded cterm=NONE ctermfg=black ctermbg=8
 hi Folded gui=NONE guifg=black guibg=green
+
+
+" ----- ULTISNIPS -----
+let g:UltiSnipsExpandTrigger="<c-j>"
+
