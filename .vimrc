@@ -47,8 +47,8 @@ vnoremap <Del> "_d
 
 
 " ----- COPY-COMMENT-PASTE -----
-vnoremap <C-d> :t'><CR>gv:TComment<CR>`]
-nnoremap <C-d> :t.<CR>k:TComment<CR>`]
+vnoremap <C-d> :t'><CR>gv:call NERDComment(0,"comment")<CR>`]
+nnoremap <C-d> :t.<CR>k:call NERDComment(0,"comment")<CR>`]
 
 
 " ----- ENABLE MOUSE SUPPORT -----
@@ -61,7 +61,7 @@ endif
 set tabstop=3
 set shiftwidth=3
 
-function! TabToggle()
+function! IndentToggle()
 	if &expandtab
 		set noexpandtab
 		echo "set tabs as indent"
@@ -70,20 +70,10 @@ function! TabToggle()
 		echo "set spaces as indent"
 	endif
 endfunction
-nmap <F9> mz:execute TabToggle()<CR>
+nmap <F9> mz:execute IndentToggle()<CR>
 
 noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
 imap <silent> <Home> <C-O><Home>
-
-
-" ----- MOVE CURSOR -----
-" enable to move the cursor down/up one diplsayed line
-" nnoremap <Down> gj
-" nnoremap <Up> gk
-" vnoremap <Down> gj
-" vnoremap <Up> gk
-" inoremap <Down> <C-o>gj
-" inoremap <Up> <C-o>gk
 
 
 " ----- SELECT ALL -----
@@ -150,7 +140,7 @@ noremap <S-F> :call SearchAndReplace()<CR>
 
 
 " ------ VISIBLITY WHITESPACES ------
-set listchars=eol:$,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:.
 hi NonText ctermfg=121 guifg=#87ff87
 hi SpecialKey ctermfg=121 guifg=#87ff87
 nnoremap <F10> :set list!<CR>
@@ -198,6 +188,7 @@ let g:NERDCustomDelimiters = {'c': { 'left': '//' }, 'cpp': { 'left': '//' }}
 nmap <C-_> <plug>NERDCommenterToggle
 vmap <C-_> <plug>NERDCommenterToggle gv
 
+
 " ----- TAGBAR -----
 nmap <F8> :TagbarToggle<CR>
 
@@ -215,3 +206,8 @@ let g:UltiSnipsExpandTrigger="<c-l>" " Trigger configuration. Do not use <tab> i
 let g:UltiSnipsJumpForwardTrigger="<c-l>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsJumpBackwardTrigger="<c-h>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
+
+
+" ----- EASYTAGS -----
+set tags=./tags;
+let g:easytags_dynamic_files = 1
