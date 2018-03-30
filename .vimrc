@@ -206,8 +206,3 @@ let g:UltiSnipsExpandTrigger="<c-l>" " Trigger configuration. Do not use <tab> i
 let g:UltiSnipsJumpForwardTrigger="<c-l>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsJumpBackwardTrigger="<c-h>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
-
-
-" ----- EASYTAGS -----
-set tags=./tags;
-let g:easytags_dynamic_files = 1
