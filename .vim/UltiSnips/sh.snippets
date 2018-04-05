@@ -34,11 +34,29 @@ if [ $? != 0 ] ; then echo "Failed parsing options." >&2 ; exit 1 ; fi
 eval set -- "$OPTS"
 
 while true; do
-  case "\$1" in
-    -h | --help )    echo "HELP"; shift ;;
-    -p | --test-parameter ) echo "parameter:" \$2; shift; shift ;;
-    -- ) shift; break ;;
-    * ) break ;;
-  esac
+	case "\$1" in
+		-h | --help )
+			echo "HELP"
+			exit ;;
+		-p | --test-parameter )
+			echo "parameter:" \$2
+			shift; shift ;;
+		-- )
+			shift; break ;;
+		* )
+			break ;;
+	esac
 done
+endsnippet
+
+snippet help
+print_help() {
+cat <<-END
+Usage:
+------------
+   -h | --help
+     Display this help
+
+END
+}
 endsnippet
