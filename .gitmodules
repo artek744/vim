@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule ".vim/bundle/TagHighlight"]
+	path = .vim/bundle/TagHighlight
+	url = https://github.com/vim-scripts/TagHighlight
