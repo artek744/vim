@@ -104,13 +104,6 @@ nnoremap <TAB> :bnext <CR>
 nnoremap <S-TAB> :bprevious <CR>
 
 
-" ----- NAVIGATION BETWEEN PANES -----
-nnoremap <C-Left> <C-W><C-H>
-nnoremap <C-Right> <C-W><C-L>
-nnoremap <C-Down> <C-W><C-J>
-nnoremap <C-Up> <C-W><C-K>
-
-
 " ----- RESIZE SPLITS QUICKLY -----
 nnoremap <S-Left> :vertical resize -5 <CR>
 nnoremap <S-Right> :vertical resize +5 <CR>
@@ -206,3 +199,7 @@ let g:UltiSnipsExpandTrigger="<c-l>" " Trigger configuration. Do not use <tab> i
 let g:UltiSnipsJumpForwardTrigger="<c-l>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsJumpBackwardTrigger="<c-h>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
+
+
+" ----- MOVE SEARCH RESULT TO NEW BUFER -----
+nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
