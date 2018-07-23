@@ -23,7 +23,7 @@ filetype plugin on            " enable loading the plugin files for specific fil
 set backspace=2               " make backspace work like most other apps
 set linespace=2               " wihtout this line the underscores are invisible
 set linebreak                 " move word to another line when it must be divided
-
+set hidden                    " when you switch back (buffer), you still have your undo history
 
 " ----- COLOR FOR SEARCH MATCHES  -----
 set hlsearch " set higlight for search matches
