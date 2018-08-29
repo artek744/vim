@@ -31,7 +31,7 @@ install_submodules()
 
 install_dependencies()
 {
-	dependencies="vim vim-gtk vim-gnome exuberant-ctags"
+	dependencies="vim vim-gtk vim-gnome clang"
 	echo -e "\nDependencies: "$YELLOW_BOLD $dependencies $RESET
 
 	while true

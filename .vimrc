@@ -200,9 +200,9 @@ nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
 
 " ----- COMPLETION -----
  " path to directory where library can be found
-let g:clang_library_path='/usr/lib/llvm-6.0/lib'
+let g:clang_library_path='/usr/lib/llvm-3.8/lib'
  " or path directly to the library file
-let g:clang_library_path='/usr/lib/x86_64-linux-gnu/libclang-6.0.so.1'
+let g:clang_library_path='/usr/lib/x86_64-linux-gnu/libclang-3.8.so.1'
 
 " Complete options (disable preview scratch window)
 set completeopt=menu,menuone,longest
@@ -224,7 +224,6 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
             \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
             \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
 imap <C-@> <C-Space>
-
 
 set conceallevel=2
 set concealcursor=vin
