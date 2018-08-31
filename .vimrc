@@ -196,37 +196,3 @@ hi Folded gui=NONE guifg=black guibg=green
 
 " ----- MOVE SEARCH RESULT TO NEW BUFER -----
 nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
-
-
-" ----- COMPLETION -----
- " path to directory where library can be found
-let g:clang_library_path='/usr/lib/llvm-3.8/lib'
- " or path directly to the library file
-let g:clang_library_path='/usr/lib/x86_64-linux-gnu/libclang-3.8.so.1'
-
-" Complete options (disable preview scratch window)
-set completeopt=menu,menuone,longest
-" Limit popup menu height
-set pumheight=13
-
-" SuperTab option for context aware completion
-let g:SuperTabDefaultCompletionType = "context"
-
-" Disable auto popup, use <Tab> to autocomplete
-let g:clang_complete_auto = 0
-" Show clang errors in the quickfix window
-let g:clang_complete_copen = 1
-
-" Ctrl-Space for completions. Heck Yeah!
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-            \ "\<lt>C-n>" :
-            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
-
-set conceallevel=2
-set concealcursor=vin
-let g:clang_snippets=1
-let g:clang_conceal_snippets=1
-let g:clang_snippets_engine='clang_complete'

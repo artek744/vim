@@ -22,9 +22,6 @@
 [submodule ".vim/bundle/vim-snippets"]
 	path = .vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
-[submodule ".vim/bundle/clang_complete"]
-	path = .vim/bundle/clang_complete
-	url = https://github.com/Rip-Rip/clang_complete
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
@@ -37,6 +34,3 @@
 [submodule ".vim/bundle/vim-snipmate"]
 	path = .vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
-[submodule ".vim/bundle/color_coded"]
-	path = .vim/bundle/color_coded
-	url = https://github.com/jeaye/color_coded
