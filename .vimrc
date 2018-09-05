@@ -203,3 +203,9 @@ let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your w
 
 " ----- MOVE SEARCH RESULT TO NEW BUFER -----
 nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
+
+
+" ----- CLANG COMPLETE CONFIG -----
+if !empty(glob(".vim/clang_complete_config.vim"))
+	source .vim/clang_complete_config.vim
+endif
