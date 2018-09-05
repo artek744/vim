@@ -1,13 +1,13 @@
 CLANG_CONFIG_FILE="clang_complete_config.vim"
 SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
 
-# sudo apt-get update
-# sudo apt-get install clang libclang-dev
+sudo apt-get update
+sudo apt-get install clang libclang-dev
 
-# cd ~/.vim/bundle
-# git clone https://github.com/rip-rip/clang_complete
-# cd clang_complete
-# make install
+cd ~/.vim/bundle
+git clone https://github.com/rip-rip/clang_complete
+cd clang_complete
+make install
 
 clang_lib_path=$(ldconfig -p | grep -o /.*libclang.*so.* | tail -n 1)
 
