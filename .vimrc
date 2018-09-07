@@ -194,6 +194,10 @@ hi Folded cterm=NONE ctermfg=black ctermbg=8
 hi Folded gui=NONE guifg=black guibg=green
 
 
+" ----- MOVE SEARCH RESULT TO NEW BUFER -----
+nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
+
+
 " ----- ULTISNIPS -----
 let g:UltiSnipsExpandTrigger="<c-l>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsJumpForwardTrigger="<c-l>" " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -201,5 +205,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>" " Trigger configuration. Do not use <
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
 
-" ----- MOVE SEARCH RESULT TO NEW BUFER -----
-nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
+" ----- YOUCOMPLETME -----
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_auto_trigger = 0
+
+
+
