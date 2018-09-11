@@ -209,3 +209,13 @@ nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
 if !empty(glob("~/.vim/clang_complete_config.vim"))
 	source ~/.vim/clang_complete_config.vim
 endif
+
+
+" ----- SUPERTAB -----
+let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>' " SuperTab completion fall-back
+
+if has("gui_running")
+	let g:SuperTabMappingForward = '<c-space>'
+else
+	let g:SuperTabMappingForward = '<c-@>'
+endif

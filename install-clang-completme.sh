@@ -31,9 +31,5 @@ set completeopt=menu,menuone
 
 \" Limit popup menu height
 set pumheight=20
-
-\" SuperTab completion fall-back
-let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
-let g:SuperTabMappingForward = '<c-@>'
 " > $SCRIPT_PATH/.vim/$CLANG_CONFIG_FILE
 
