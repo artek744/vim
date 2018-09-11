@@ -23,6 +23,8 @@ let g:clang_complete_auto=0
 \" The single one that works with clang_complete
 let g:clang_snippets_engine='clang_complete'
 
+let g:clang_complete_patterns=1
+
 \" Complete options (disable preview scratch window, longest removed to aways
 \" show menu)
 set completeopt=menu,menuone
@@ -32,15 +34,6 @@ set pumheight=20
 
 \" SuperTab completion fall-back
 let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
+let g:SuperTabMappingForward = '<c-@>'
 " > $SCRIPT_PATH/.vim/$CLANG_CONFIG_FILE
 
-
-echo '
-" Ctrl-Space for completions. Heck Yeah!
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == "" ?
-        \ "\<lt>C-n>" :
-        \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-        \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-        \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
-' >> $SCRIPT_PATH/.vim/$CLANG_CONFIG_FILE
