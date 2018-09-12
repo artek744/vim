@@ -1,22 +1,25 @@
 # base
 snippet base
-	.PHONY: clean, mrproper
-	CC = gcc
-	CFLAGS = -g -Wall
+	CFLAGS = -Wall -g
+	CC = ${3:gcc}
 
-	all: $1
+	NAME = ${1:program_name}
+	SOURCES = $(wildcard *.$2)
+	OBJECTS = $(SOURCES:.$2=.o)
 
-	%.o: %.c
-		$(CC) $(CFLAGS) -c -o $@ $<
-	
-	${1:out}: $1.o
-		$(CC) $(CFLAGS) -o $@ $+
+	all: $(NAME)
+
+	$(NAME): $(OBJECTS)
+		$(CC) $(OBJECTS) $(LDFLAGS) -o $(NAME)
+
+	%.o: %.${2:c}
+		$(CC) -c $(CFLAGS) $< -o $@
 
 	clean:
-		rm -f *.o core.*
+		rm -f $(OBJECTS)
+		rm -f $(NAME)
 
-	mrproper: clean
-		rm -f $1
+	.PHONY: clean
 # add
 snippet add
 	${1:out}: $1.o
