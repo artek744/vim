@@ -217,3 +217,8 @@ if has("gui_running")
 else
 	let g:SuperTabMappingForward = '<c-@>'
 endif
+
+
+" ----- AUTOPAIRS -----
+let g:AutoPairsMapCR = 0
+imap <silent><CR> <CR><Plug>AutoPairsReturn

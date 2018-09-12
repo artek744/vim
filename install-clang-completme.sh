@@ -13,15 +13,15 @@ RESET="\033[0m"
 
 instal_dependencies()
 {
-	echo -e "${CYAN}Updating repository... ${RESET}"
+	echo -e "${CYAN}\nUpdating repository... ${RESET}"
 	sudo apt-get update
-	echo -e "${CYAN}Installing dependencies... ${RESET}"
+	echo -e "${CYAN}\nInstalling dependencies... ${RESET}"
 	sudo apt-get install clang libclang-dev
 }
 
 clone_repository()
 {
-	echo -e "${CYAN}Cloning repository...${RESET}"
+	echo -e "${CYAN}\nCloning repository...${RESET}"
 	cd ~/.vim/bundle
 	rm -rf clang_complete
 	git clone https://github.com/rip-rip/clang_complete
@@ -29,14 +29,14 @@ clone_repository()
 
 install_clang_complete()
 {
-	echo -e "${CYAN}Installing clang_complete...${RESET}"
+	echo -e "${CYAN}\nInstalling clang_complete...${RESET}"
 	cd clang_complete
 	make install
 }
 
 create_clang_complete_config()
 {
-	echo -e "${CYAN}Creating clang_complete config...${RESET}"
+	echo -e "${CYAN}\nCreating clang_complete config...${RESET}"
 	clang_lib_path=$(ldconfig -p | grep -o /.*libclang.*so.* | tail -n 1)
 
 	echo "\" ----- CLANG COMPLETE CONFIG -----
