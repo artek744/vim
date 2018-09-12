@@ -3,6 +3,7 @@
 .vim/bundle/clang_complete/
 .vim/doc/
 .vim/plugin/
+.vim/bundle/color_coded/
 
 # This file is generated via install-clang-complete.sh script
 .vim/clang_complete_config.vim
