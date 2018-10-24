@@ -70,7 +70,8 @@ function! IndentToggle()
 		echo "set spaces as indent"
 	endif
 endfunction
-nmap <F9> mz:execute IndentToggle()<CR>
+nmap <F9> :call IndentToggle()<CR>
+inoremap <F9> <c-o>:call IndentToggle()<CR>
 
 noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
 imap <silent> <Home> <C-O><Home>
@@ -137,6 +138,7 @@ set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,spac
 hi NonText ctermfg=121 guifg=#87ff87
 hi SpecialKey ctermfg=121 guifg=#87ff87
 nnoremap <F10> :set list!<CR>
+inoremap <F10> <c-o>:set list!<CR>
 
 
 " ----- GUI SETTINGS FOR VIM GNOME -----
