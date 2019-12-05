@@ -117,3 +117,10 @@ snippet color
 	NC="\033[0m"
 
 	echo -e ${GREEN}"\n ---------- $(basename $BASH_SOURCE) ----------\n"${NC}
+
+snippet issourced
+	if [ "$(basename -- "\$0")" = "$(basename $BASH_SOURCE)" ]; then
+		 echo -e ${RED}"\nThis script has to be sourced, not run.\n"${RESET} >&2
+		 exit 1
+	fi
+
