@@ -58,9 +58,10 @@ endif
 
 
 " ----- INDENT -----
-set tabstop=3
-set shiftwidth=3
+set tabstop=4
+set shiftwidth=4
 
+set expandtab
 function! IndentToggle()
 	if &expandtab
 		set noexpandtab
@@ -224,3 +225,4 @@ endif
 " ----- AUTOPAIRS -----
 let g:AutoPairsMapCR = 0
 imap <silent><CR> <CR><Plug>AutoPairsReturn
+
