@@ -27,32 +27,14 @@ install_submodules()
 {
 	echo -e $CYAN "\nInstalling submodules ..." $RESET
 	git submodule update --init --recursive
-}
+    git submodule update --remote --merge
 
-install_dependencies()
-{
-	dependencies="vim vim-gtk vim-gnome exuberant-ctags"
-	echo -e "\nDependencies: "$YELLOW_BOLD $dependencies $RESET
-
-	while true
-	do
-		read -p "$(echo -e "Do you want to install dependencies? [y/n]: "$RESET)" choice
-		case "$choice" in
-			n|N) break;;
-			y|Y)	echo -e $CYAN "\nUpdating repositories ..." $RESET
-					sudo apt-get update
-					echo -e $CYAN "\nInstalling dependencies ..." $RESET
-					sudo apt-get install $dependencies
-				  break;;
-			*) echo -e '\nIncorrect response, please type '\''y'\'' or '\''n'\';;
-		esac
-	done
+    git config --global core.editor "vim"
 }
 
 main()
 {
 	copy_configs
-	install_dependencies
 	install_submodules
 
 	echo -e $GREEN_BOLD "\nVim config files have been instaled.\n" $RESET
