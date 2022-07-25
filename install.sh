@@ -12,21 +12,27 @@ RESET="\033[0m"
 
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
+install_vim()
+{
+    sudo apt update
+    sudo apt install vim-gtk
+}
+
 copy_configs()
 {
-	echo -e $CYAN "\nCopying configs ..." $RESET
+    echo -e $CYAN "\nCopying configs ..." $RESET
 
-	rm -r ~/.vim 2> /dev/null
-	rm ~/.vimrc 2> /dev/null
+    rm -r ~/.vim 2> /dev/null
+    rm ~/.vimrc 2> /dev/null
 
-	ln -sfn $SCRIPT_PATH/.vim ~/.vim
-	ln -sfn $SCRIPT_PATH/.vimrc ~/.vimrc
+    ln -sfn $SCRIPT_PATH/.vim ~/.vim
+    ln -sfn $SCRIPT_PATH/.vimrc ~/.vimrc
 }
 
 install_submodules()
 {
-	echo -e $CYAN "\nInstalling submodules ..." $RESET
-	git submodule update --init --recursive
+    echo -e $CYAN "\nInstalling submodules ..." $RESET
+    git submodule update --init --recursive
     git submodule update --remote --merge
 
     git config --global core.editor "vim"
@@ -34,10 +40,11 @@ install_submodules()
 
 main()
 {
-	copy_configs
-	install_submodules
+    install_vim
+    copy_configs
+    install_submodules
 
-	echo -e $GREEN_BOLD "\nVim config files have been instaled.\n" $RESET
+    echo -e $GREEN_BOLD "\nVim config files have been instaled.\n" $RESET
 }
 
 
